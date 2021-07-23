@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal_app/screens/category_meal_screen.dart';
 
 class CategortItem extends StatelessWidget {
   final String id;
@@ -6,10 +7,18 @@ class CategortItem extends StatelessWidget {
   final Color color;
 
   CategortItem(this.id, this.title, this.color);
+
+  void selectCategory(BuildContext ctx) {
+    Navigator.of(ctx).pushNamed(CategoryMealScreen.routeName,
+        arguments: {'id': id, 'title': title});
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => {},
+      onTap: () => selectCategory(context),
+      splashColor: Theme.of(context).primaryColor,
+      borderRadius: BorderRadius.circular(15),
       child: Container(
         padding: EdgeInsets.all(15),
         child: Text(
