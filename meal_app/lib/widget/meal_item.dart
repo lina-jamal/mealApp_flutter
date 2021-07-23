@@ -31,6 +31,23 @@ class MealItem extends StatelessWidget {
     }
   }
 
+  String get affordabilityText {
+    switch (affordability) {
+      case Affordability.affordable:
+        return 'Affordable';
+        break;
+      case Affordability.Pricey:
+        return 'Pricey';
+        break;
+      case Affordability.Luxurious:
+        return 'Luxurious';
+        break;
+      default:
+        return 'UnKnown';
+        break;
+    }
+  }
+
   void selectedMeal() {}
   @override
   Widget build(BuildContext context) {
@@ -100,11 +117,11 @@ class MealItem extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Icon(Icons.access_alarm),
+                      Icon(Icons.attach_money),
                       SizedBox(
                         width: 6,
                       ),
-                      Text('data')
+                      Text('$affordabilityText')
                     ],
                   )
                 ],
