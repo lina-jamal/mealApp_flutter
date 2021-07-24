@@ -3,6 +3,27 @@ import 'package:meal_app/utlis/dummy_data.dart';
 
 class MealDetailScreen extends StatelessWidget {
   static const routeName = 'mealDetail';
+  Widget buildSectionTitle(BuildContext ctx, String text) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 10),
+      child: Text(
+        text,
+        style: Theme.of(ctx).textTheme.headline6,
+      ),
+    );
+  }
+
+  Widget buildContainer(Widget child) {
+    return Container(
+        decoration: BoxDecoration(
+            border: Border.all(color: Colors.grey),
+            borderRadius: BorderRadius.circular(10)),
+        margin: EdgeInsets.all(10),
+        padding: EdgeInsets.all(10),
+        width: 300,
+        height: 150,
+        child: child);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,22 +43,9 @@ class MealDetailScreen extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 10),
-            child: Text(
-              'Ingredients',
-              style: Theme.of(context).textTheme.headline6,
-            ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(10)),
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.all(10),
-            width: 300,
-            height: 150,
-            child: ListView.builder(
+          buildSectionTitle(context, 'Ingredients'),
+          buildContainer(
+            ListView.builder(
               itemBuilder: (ctx, index) => Card(
                 color: Theme.of(context).accentColor,
                 child: Padding(
@@ -48,7 +56,8 @@ class MealDetailScreen extends StatelessWidget {
               ),
               itemCount: selectedMeal.ingredients.length,
             ),
-          )
+          ),
+          buildSectionTitle(context, 'Steps')
         ],
       ),
     );
