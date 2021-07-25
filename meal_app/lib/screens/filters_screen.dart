@@ -13,6 +13,16 @@ class _FiltersScreenState extends State<FiltersScreen> {
   bool _lactoseFree = false;
   bool _vegan = false;
   bool _vegetarian = false;
+  Widget buildSwitchListTile(
+      String title, String subTitle, bool currentVal, onChangeValue) {
+    return SwitchListTile(
+      title: Text(title),
+      value: currentVal,
+      subtitle: Text(subTitle),
+      onChanged: onChangeValue,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,16 +41,46 @@ class _FiltersScreenState extends State<FiltersScreen> {
           Expanded(
               child: ListView(
             children: [
-              SwitchListTile(
-                title: Text('Gluten Free'),
-                value: _glutenFree,
-                subtitle: Text('Only include glutenfree meals'),
-                onChanged: (value) {
+              buildSwitchListTile(
+                'Gluten Free',
+                'Only include glutenfree meals',
+                _glutenFree,
+                (value) {
                   setState(() {
                     _glutenFree = value;
                   });
                 },
-              )
+              ),
+              buildSwitchListTile(
+                'Lactose Free',
+                'Only include lactoseFree meals',
+                _lactoseFree,
+                (value) {
+                  setState(() {
+                    _lactoseFree = value;
+                  });
+                },
+              ),
+              buildSwitchListTile(
+                '_Vegetarian',
+                'Only include vegetarian meals',
+                _glutenFree,
+                (value) {
+                  setState(() {
+                    _vegetarian = value;
+                  });
+                },
+              ),
+              buildSwitchListTile(
+                'Vegan',
+                'Only include vegan meals',
+                _glutenFree,
+                (value) {
+                  setState(() {
+                    _vegan = value;
+                  });
+                },
+              ),
             ],
           ))
         ],
