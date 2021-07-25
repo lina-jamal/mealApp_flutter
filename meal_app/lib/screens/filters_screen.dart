@@ -64,7 +64,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
               buildSwitchListTile(
                 '_Vegetarian',
                 'Only include vegetarian meals',
-                _glutenFree,
+                _vegetarian,
                 (value) {
                   setState(() {
                     _vegetarian = value;
@@ -74,7 +74,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
               buildSwitchListTile(
                 'Vegan',
                 'Only include vegan meals',
-                _glutenFree,
+                _vegan,
                 (value) {
                   setState(() {
                     _vegan = value;
