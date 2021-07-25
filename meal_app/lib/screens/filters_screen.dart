@@ -28,6 +28,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('your filter'),
+        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.save))],
       ),
       body: Column(
         children: [
