@@ -3,6 +3,9 @@ import '../widget/main_drawer.dart';
 
 class FiltersScreen extends StatefulWidget {
   static const routeName = '/filters';
+  final _saveFelters;
+
+  const FiltersScreen(this._saveFelters);
 
   @override
   _FiltersScreenState createState() => _FiltersScreenState();
@@ -28,7 +31,19 @@ class _FiltersScreenState extends State<FiltersScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('your filter'),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.save))],
+        actions: [
+          IconButton(
+              onPressed: () {
+                final Map<String, bool> selectedFelters = {
+                  "gluten": _glutenFree,
+                  "lactose": _lactoseFree,
+                  "vegan": _vegan,
+                  "vegetarian": _vegetarian,
+                };
+                widget._saveFelters(selectedFelters);
+              },
+              icon: Icon(Icons.save))
+        ],
       ),
       body: Column(
         children: [
