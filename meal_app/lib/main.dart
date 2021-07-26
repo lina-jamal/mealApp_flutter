@@ -66,7 +66,8 @@ class _MyAppState extends State<MyApp> {
         CategoryMealScreen.routeName: (context) =>
             CategoryMealScreen(_avaiaibleMeal),
         MealDetailScreen.routeName: (context) => MealDetailScreen(),
-        FiltersScreen.routeName: (context) => FiltersScreen(_setFilter),
+        FiltersScreen.routeName: (context) =>
+            FiltersScreen(_filters, _setFilter),
         // '/RadarChartSample1': (context) => RadarChartSample1(),
       },
     );
