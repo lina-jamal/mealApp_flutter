@@ -77,6 +77,13 @@ const DUMMY_MEALS = const [
       'Spices',
       'Cheese (optional)'
     ],
+    nutric: [
+      {'name': 'protein', 'precent': 40, 'color': 'red'},
+      {'name': 'fat', 'precent': 20, 'color': 'blue'},
+      {'name': 'calories', 'precent': 10, 'color': 'green'},
+      {'name': 'saturated fat', 'precent': 12, 'color': 'black'},
+      {'name': 'iron', 'precent': 8, 'color': 'orange'},
+    ],
     steps: [
       'Cut the tomatoes and the onion into small pieces.',
       'Boil some water - add salt to it once it boils.',
@@ -109,6 +116,13 @@ const DUMMY_MEALS = const [
       '1-2 Slices of Cheese',
       'Butter'
     ],
+    nutric: [
+      {'name': 'protein', 'precent': 40, 'color': 'red'},
+      {'name': 'fat', 'precent': 20, 'color': 'blue'},
+      {'name': 'calories', 'precent': 10, 'color': 'green'},
+      {'name': 'saturated fat', 'precent': 12, 'color': 'black'},
+      {'name': 'iron', 'precent': 8, 'color': 'orange'},
+    ],
     steps: [
       'Butter one side of the white bread',
       'Layer ham, the pineapple and cheese on the white bread',
@@ -138,6 +152,13 @@ const DUMMY_MEALS = const [
       '1 Onion',
       'Ketchup',
       '2 Burger Buns'
+    ],
+    nutric: [
+      {'name': 'protein', 'precent': 40, 'color': 'red'},
+      {'name': 'fat', 'precent': 20, 'color': 'blue'},
+      {'name': 'calories', 'precent': 10, 'color': 'green'},
+      {'name': 'saturated fat', 'precent': 12, 'color': 'black'},
+      {'name': 'iron', 'precent': 8, 'color': 'orange'},
     ],
     steps: [
       'Form 2 patties',
@@ -181,6 +202,13 @@ const DUMMY_MEALS = const [
       'Remove, and drain on kitchen paper. Fry the parsley in the remaining oil and drain.',
       'Place the schnitzels on awarmed plate and serve garnishedwith parsley and slices of lemon.'
     ],
+    nutric: [
+      {'name': 'protein', 'precent': 40, 'color': 'red'},
+      {'name': 'fat', 'precent': 20, 'color': 'blue'},
+      {'name': 'calories', 'precent': 10, 'color': 'green'},
+      {'name': 'saturated fat', 'precent': 12, 'color': 'black'},
+      {'name': 'iron', 'precent': 8, 'color': 'orange'},
+    ],
     isGlutenFree: false,
     isVegan: false,
     isVegetarian: false,
@@ -209,6 +237,13 @@ const DUMMY_MEALS = const [
       'Balsamic Vinegar',
       'Olive Oil',
       'Salt and Pepper'
+    ],
+    nutric: [
+      {'name': 'protein', 'precent': 40, 'color': 'red'},
+      {'name': 'fat', 'precent': 20, 'color': 'blue'},
+      {'name': 'calories', 'precent': 10, 'color': 'green'},
+      {'name': 'saturated fat', 'precent': 12, 'color': 'black'},
+      {'name': 'iron', 'precent': 8, 'color': 'orange'},
     ],
     steps: [
       'Wash and cut salad and herbs',
@@ -241,6 +276,13 @@ const DUMMY_MEALS = const [
       '300g Yoghurt',
       '200g Cream',
       'Orange Peel',
+    ],
+    nutric: [
+      {'name': 'protein', 'precent': 40, 'color': 'red'},
+      {'name': 'fat', 'precent': 20, 'color': 'blue'},
+      {'name': 'calories', 'precent': 10, 'color': 'green'},
+      {'name': 'saturated fat', 'precent': 12, 'color': 'black'},
+      {'name': 'iron', 'precent': 8, 'color': 'orange'},
     ],
     steps: [
       'Dissolve gelatine in pot',
@@ -278,6 +320,13 @@ const DUMMY_MEALS = const [
       '1 Egg',
       '3 Tablespoons Butter, melted',
     ],
+    nutric: [
+      {'name': 'protein', 'precent': 40, 'color': 'red'},
+      {'name': 'fat', 'precent': 20, 'color': 'blue'},
+      {'name': 'calories', 'precent': 10, 'color': 'green'},
+      {'name': 'saturated fat', 'precent': 12, 'color': 'black'},
+      {'name': 'iron', 'precent': 8, 'color': 'orange'},
+    ],
     steps: [
       'In a large bowl, sift together the flour, baking powder, salt and sugar.',
       'Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.',
@@ -308,6 +357,13 @@ const DUMMY_MEALS = const [
       '4 Tablespoons Almonds',
       '1 Teaspoon Cayenne Pepper',
       '500ml Coconut Milk',
+    ],
+    nutric: [
+      {'name': 'protein', 'precent': 40, 'color': 'red'},
+      {'name': 'fat', 'precent': 20, 'color': 'blue'},
+      {'name': 'calories', 'precent': 10, 'color': 'green'},
+      {'name': 'saturated fat', 'precent': 12, 'color': 'black'},
+      {'name': 'iron', 'precent': 8, 'color': 'orange'},
     ],
     steps: [
       'Slice and fry the chicken breast',
@@ -346,6 +402,13 @@ const DUMMY_MEALS = const [
       '2 Large Egg Whites',
       '1 Pinch Cream of Tartar',
       '1 Tablespoon white Sugar',
+    ],
+    nutric: [
+      {'name': 'protein', 'precent': 40, 'color': 'red'},
+      {'name': 'fat', 'precent': 20, 'color': 'blue'},
+      {'name': 'calories', 'precent': 10, 'color': 'green'},
+      {'name': 'saturated fat', 'precent': 12, 'color': 'black'},
+      {'name': 'iron', 'precent': 8, 'color': 'orange'},
     ],
     steps: [
       'Preheat oven to 190°C. Line a rimmed baking sheet with parchment paper.',
@@ -390,6 +453,13 @@ const DUMMY_MEALS = const [
       '300g Cherry Tomatoes',
       'Salad',
       'Salt, Pepper and Olive Oil'
+    ],
+    nutric: [
+      {'name': 'protein', 'precent': 40, 'color': 'red'},
+      {'name': 'fat', 'precent': 20, 'color': 'blue'},
+      {'name': 'calories', 'precent': 10, 'color': 'green'},
+      {'name': 'saturated fat', 'precent': 12, 'color': 'black'},
+      {'name': 'iron', 'precent': 8, 'color': 'orange'},
     ],
     steps: [
       'Wash, peel and cut the asparagus',
