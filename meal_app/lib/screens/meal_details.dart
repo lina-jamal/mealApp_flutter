@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:meal_app/utlis/dummy_data.dart';
+import '../utlis/dummy_data.dart';
+import '../widget/PieChart.dart';
 
 class MealDetailScreen extends StatelessWidget {
   static const routeName = 'mealDetail';
@@ -50,6 +51,7 @@ class MealDetailScreen extends StatelessWidget {
               ),
             ),
             buildSectionTitle(context, 'Ingredients'),
+            PieChartPage(dataList: selectedMeal.nutric),
             buildContainer(
               ListView.builder(
                 itemBuilder: (ctx, index) => Card(
