@@ -1,53 +1,76 @@
 import 'package:fl_chart/fl_chart.dart';
-// import 'package:fl_pie_chart_example/widget/indicators_widget.dart';
-// import 'package:fl_pie_chart_example/widget/pie_chart_sections.dart';
 import 'package:flutter/material.dart';
-import 'package:meal_app/widget/getSections.dart';
+import 'package:flutter/gestures.dart';
+import 'package:meal_app/utlis/dummy_data.dart';
+import 'indicator.dart';
 
 class PieChartPage extends StatefulWidget {
+  List dataList;
+  PieChartPage({required this.dataList});
+
   @override
   State<StatefulWidget> createState() => PieChartPageState();
 }
 
-class PieChartPageState extends State {
-  // int touchedIndex = 0;
+class PieChartPageState extends State<PieChartPage> {
+  var nutric = DUMMY_MEALS[0].nutric;
 
   @override
-  Widget build(BuildContext context) => Card(
-        child: Column(
-          children: [
+  Widget build(BuildContext context) {
+    print(widget.dataList);
+    return AspectRatio(
+      aspectRatio: 1.3,
+      child: Card(
+        color: Colors.yellow[50],
+        child: Row(
+          children: <Widget>[
             Expanded(
               child: PieChart(
                 PieChartData(
-                  // pieTouchData: PieTouchData(
-                  //   touchCallback: (pieTouchResponse) {
-                  //     setState(() {
-                  //       if (pieTouchResponse.touchInput is FlLongPressEnd ||
-                  //           pieTouchResponse.touchInput is FlPanEnd) {
-                  //         touchedIndex = -1;
-                  //       } else {
-                  //         touchedIndex = pieTouchResponse.touchedSectionIndex;
-                  //       }
-                  //     });
-                  //   },
-                  // ),
-                  borderData: FlBorderData(show: false),
+                  borderData: FlBorderData(
+                    show: false,
+                  ),
                   sectionsSpace: 0,
                   centerSpaceRadius: 40,
-                  sections: getSections(),
+                  sections: showingSections(),
                 ),
               ),
             ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     Padding(
-            //       padding: const EdgeInsets.all(16),
-            //       child: IndicatorsWidget(),
-            //     ),
-            //   ],
-            // ),
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: widget.dataList
+                  .map(
+                    (e) => Indicator(
+                      color: e['color'],
+                      text: e['name'],
+                      isSquare: true,
+                    ),
+                  )
+                  .toList(),
+            ),
+            const SizedBox(
+              width: 28,
+            ),
           ],
         ),
-      );
+      ),
+    );
+  }
+
+  List<PieChartSectionData> showingSections() {
+    return widget.dataList
+        .map((e) => PieChartSectionData(
+              color: e['color'],
+              value: e['precent'].toDouble(),
+              title: '${e['precent']}%',
+              titleStyle: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xffffffff),
+              ),
+            ))
+        .toList();
+  }
 }
