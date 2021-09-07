@@ -12,6 +12,16 @@ void main() {
 
 class MyApp extends StatefulWidget {
   // This widget is the root of your application.
+  void changeNumber() {
+    print('Testing');
+  }
+
+  final List<Meal> favoriteMeal = [];
+
+  bool isMealFavourite(String id) {
+    return favoriteMeal.any((meal) => meal.id == id);
+  }
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -24,7 +34,6 @@ class _MyAppState extends State<MyApp> {
     "vegetarian": false,
   };
   List<Meal> _avaiaibleMeal = DUMMY_MEALS;
-  List<Meal> _favoriteMeal = [];
   _setFilter(Map<String, bool> _filterType) {
     print(_filterType);
     setState(() {
@@ -41,7 +50,8 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _toggleFavorite(String mealId) {
-    final existIndex = _favoriteMeal.indexWhere((meal) => meal.id == mealId);
+    final existIndex =
+        widget.favoriteMeal.indexWhere((meal) => meal.id == mealId);
     print(existIndex);
     if (existIndex >= 0) {
       setState(() {
@@ -49,13 +59,10 @@ class _MyAppState extends State<MyApp> {
       });
     } else {
       setState(() {
-        _favoriteMeal.add(DUMMY_MEALS.firstWhere((meal) => meal.id == mealId));
+        widget.favoriteMeal
+            .add(DUMMY_MEALS.firstWhere((meal) => meal.id == mealId));
       });
     }
-  }
-
-  bool _isMealFavourite(String id) {
-    return _favoriteMeal.any((meal) => meal.id == id);
   }
 
   @override
@@ -81,11 +88,11 @@ class _MyAppState extends State<MyApp> {
               )),
       // home: MyHomePage(),
       routes: {
-        '/': (context) => TabsScreen(_favoriteMeal),
+        '/': (context) => TabsScreen(widget.favoriteMeal),
         CategoryMealScreen.routeName: (context) =>
             CategoryMealScreen(_avaiaibleMeal),
         MealDetailScreen.routeName: (context) =>
-            MealDetailScreen(_toggleFavorite, _isMealFavourite),
+            MealDetailScreen(_toggleFavorite, widget.isMealFavourite),
         FiltersScreen.routeName: (context) =>
             FiltersScreen(_filters, _setFilter),
       },
