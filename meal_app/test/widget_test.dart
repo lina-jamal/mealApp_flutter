@@ -9,22 +9,37 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:meal_app/main.dart';
+import 'package:meal_app/screens/categories_screen.dart';
+import 'package:meal_app/widget/category_item.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+  // testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  //   // Build our app and trigger a frame.
+  //   await tester.pumpWidget(MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  //   // Verify that our counter starts at 0.
+  //   expect(find.text('0'), findsOneWidget);
+  //   expect(find.text('1'), findsNothing);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  //   // Tap the '+' icon and trigger a frame.
+  //   await tester.tap(find.byIcon(Icons.add));
+  //   await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  //   // Verify that our counter has incremented.
+  //   expect(find.text('0'), findsNothing);
+  //   expect(find.text('1'), findsOneWidget);
+  // });
+
+  // Define a test. The TestWidgets function also provides a WidgetTester
+  // to work with. The WidgetTester allows you to build and interact
+  // with widgets in the test environment.
+  testWidgets('CategoriesScreen has a Hamburgers text',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(CategoriesScreen());
+
+    await tester.pump(Duration(seconds: 3));
+
+    final titleFinder = find.text('Hamburgers');
+    expect(titleFinder, findsOneWidget);
   });
 }
