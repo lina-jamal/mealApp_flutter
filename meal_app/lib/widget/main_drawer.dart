@@ -61,16 +61,16 @@ class MainDrawer extends StatelessWidget {
               //       color: Colors.blue,
               //     )),
               IconButton(
-                icon: Image.asset("../../assets/Icon//facebook.png"),
-                hoverColor: Colors.white,
-                onPressed: _launchURL('https://www.facebook.com/cloud283'),
-              ),
+                  icon: Image.asset("../../assets/Icon//facebook.png"),
+                  hoverColor: Colors.white,
+                  onPressed: () =>
+                      _launchURL('https://www.facebook.com/cloud283')),
               IconButton(
                 icon: Image.asset(
                   "../../assets/Icon/instagram.png",
                 ),
                 hoverColor: Colors.white,
-                onPressed:
+                onPressed: () =>
                     _launchURL('https://www.instagram.com/softwarecloud283/'),
               ),
             ],
@@ -82,6 +82,7 @@ class MainDrawer extends StatelessWidget {
 }
 
 _launchURL(url) async {
+  // const url = 'https://www.facebook.com/cloud283';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
